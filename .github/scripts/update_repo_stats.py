@@ -4,15 +4,11 @@ import datetime
 from github import Github
 
 g = Github(os.environ["GH_TOKEN"])
-credentials = {
+gc = gspread.service_account_from_dict({
 	"client_email": os.environ["CLIENT_EMAIL"],
 	"token_uri": os.environ["TOKEN_URI"],
 	"private_key": os.environ["PRIVATE_KEY"].replace('\\n', '\n'),
-}
-
-print(credentials.keys())
-
-gc = gspread.service_account_from_dict(credentials)
+})
 
 repositories = [
 	{ 
