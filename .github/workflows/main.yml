@@ -20,5 +20,6 @@ jobs:
           PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
           TOKEN_URI: ${{ secrets.TOKEN_URI }}
           CLIENT_EMAIL: ${{ secrets.CLIENT_EMAIL }}
+          SH_URL: ${{ secrets.SH_URL }}
         run: |
           python $GITHUB_WORKSPACE/.github/scripts/update_repo_stats.py
