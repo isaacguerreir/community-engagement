@@ -10,7 +10,7 @@ credentials = {
 	"private_key": os.environ["PRIVATE_KEY"],
 }
 
-print(credentials)
+print(credentials.keys())
 
 gc = gspread.service_account_from_dict(credentials)
 
