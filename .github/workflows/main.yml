@@ -15,5 +15,10 @@ jobs:
       - name: Install Python dependencies
         run: python -m pip install --upgrade pip gspread PyGithub
       - name: Execute Python Script # Run the run.py on the repository root directory
+        env: # Or as an environment variable
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
+          TOKEN_URI: ${{ secrets.TOKEN_URI }}
+          CLIENT_EMAIL: ${{ secrets.CLIENT_EMAIL }}
         run: |
-          python scripts/update_repo_stats.py
+          python $GITHUB_WORKSPACE/.github/scripts/update_repo_stats.py
