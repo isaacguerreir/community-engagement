@@ -3,7 +3,7 @@ import gspread
 import datetime
 from github import Github
 
-g = Github(os.environ["GITHUB_TOKEN"])
+g = Github(os.environ["GH_TOKEN"])
 gc = gspread.service_account_from_dict({
 	"client_email": os.environ["CLIENT_EMAIL"],
 	"token_uri": os.environ["TOKEN_URI"],
