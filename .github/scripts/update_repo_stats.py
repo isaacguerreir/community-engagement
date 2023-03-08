@@ -7,7 +7,7 @@ g = Github(os.environ["GH_TOKEN"])
 credentials = {
 	"client_email": os.environ["CLIENT_EMAIL"],
 	"token_uri": os.environ["TOKEN_URI"],
-	"private_key": os.environ["PRIVATE_KEY"],
+	"private_key": os.environ["PRIVATE_KEY"].replace('\\n', '\n'),
 }
 
 print(credentials.keys())
