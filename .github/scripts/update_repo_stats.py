@@ -21,7 +21,7 @@ repositories = [
 	}
 ]
 
-sh = gc.open("Community")
+sh = gc.open_by_url(os.environ["SH_URL"])
 
 for repository in repositories:
 	worksheet = sh.worksheet(repository["worksheet"])
